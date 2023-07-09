@@ -1,0 +1,14 @@
+{
+    "name": "docker_web_app",
+    "version": "1.0.0",
+    "description": "Node.js on Docker",
+    "author": "Waliur Rahman <waliur.rahman@6point6.co.uk>",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.16.1",
+        "nodemon": "^2.0.22"
+    }
+}
