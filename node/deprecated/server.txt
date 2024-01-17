@@ -1,9 +1,15 @@
-// Imports
-const express = require('express');
-const path = require('path');
+const keys = require("./keys");
 
-// App
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+
 const app = express();
+app.use(cors());
+app.use(bodyParser.json());
+
+// Imports
+const path = require('path');
 
 // Constants
 const PORT = 8080;

@@ -12,7 +12,7 @@ export default function TemplateDashboard() {
             <main>
                 <h1>Template Dashboard</h1>
                 <button className="btn-1">+ New Template</button>
-                <Table />
+                {/* <Table /> */}
                 <ul>
                 </ul>
             </main>
