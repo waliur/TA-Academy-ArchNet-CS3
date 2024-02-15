@@ -24,7 +24,7 @@ import "./sass/index.scss";
 //   render() {
 //     return (
 //       <div className="App">
-//         {/* <TemplateDashboard /> */}
+//         <TemplateDashboard />
 //     </div>
 //     );
 //   }
