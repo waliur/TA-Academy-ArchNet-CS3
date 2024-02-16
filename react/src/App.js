@@ -20,37 +20,37 @@ import "./sass/index.scss";
 //   }
 // }
 
-// export default class App extends React.Component {
-//   render() {
-//     return (
-//       <div className="App">
-//         <TemplateDashboard />
-//     </div>
-//     );
-//   }
-// }
-
-import {useState, useEffect} from 'react';
-export default function App() {
-  const [criteria, setCriteria] = useState(false);
-
-  function getCriteria() {
-    fetch('http://localhost:3001')
-      .then(response => {
-        return response.text();
-      })
-      .then(data => {
-        setCriteria(data);
-      });
-  }
-
-  useEffect(() => {
-    getCriteria();
-  }, []);
-  return (
-    <div>
-      {criteria ? criteria : 'There is no criteria data available'}
+export default class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <TemplateDashboard />
     </div>
-  );
+    );
+  }
 }
+
+  // import {useState, useEffect} from 'react';
+  // export default function App() {
+  //   const [criteria, setCriteria] = useState(false);
+
+  //   function getCriteria() {
+  //     fetch('http://localhost:3001')
+  //       .then(response => {
+  //         return response.text();
+  //       })
+  //       .then(data => {
+  //         setCriteria(data);
+  //       });
+  //   }
+
+  //   useEffect(() => {
+  //     getCriteria();
+  //   }, []);
+  //   return (
+  //     <div>
+  //       {criteria ? criteria : 'There is no criteria data available'}
+  //     </div>
+  //   );
+  // }
 
