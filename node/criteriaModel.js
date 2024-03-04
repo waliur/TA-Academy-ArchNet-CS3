@@ -30,6 +30,26 @@ const getCriteria = async () => {
     }
   };
 
+
+//********************************************** New Assesment Flow  **********************************************************************
+
+  const getTemplateName = async (templateName) => {
+    try {
+      const data = await pgClient.query("SELECT Template_Name FROM template WHERE template_name= $1 AND active = TRUE LIMIT 1", [templateName]);
+      if(data.rowCount > 0) {
+        return data.rows[0];
+      } else {
+        throw new Error("No results found for retrieving template")
+      }
+    } catch (error) {
+      console.error(error);
+      throw new Error("Internal server error")
+
+    }
+  }    
+
+
   module.exports = {
-    getCriteria
+    getCriteria,
+    getTemplateName,
   };
