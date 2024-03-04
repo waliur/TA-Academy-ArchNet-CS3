@@ -17,7 +17,9 @@ exports.up = function(knex) {
     //.toSQL().forEach(query => console.log(query.sql));
     .then(function () {
     return knex("criteria").insert([
-        {Crit_name: "test1", Subcat_Id: 1}
+        {Crit_name: 'Upgrade to the Latest version of Java', Subcat_Id: 100, Cat_1: 'Cat 1'},
+        {Crit_name: 'Migrate On-Prem to Cloud', Subcat_Id: 200, Cat_1: 'Cat 1'},
+        {Crit_name: 'Scoping study Problem Statement', Subcat_Id: 300, Cat_1: 'Cat 1'}
     ]);
   })
 }
