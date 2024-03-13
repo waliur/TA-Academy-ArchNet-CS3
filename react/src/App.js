@@ -33,9 +33,10 @@ import "./sass/index.scss";
 import {useState, useEffect} from 'react';
 export default function App() {
   const [criteria, setCriteria] = useState(false);
+  const [template, setTemplate] = useState(false);
 
   function getCriteria() {
-    fetch('http://localhost:3001')
+    fetch('http://localhost:3001/criteria')
       .then(response => {
         return response.text();
       })
@@ -44,13 +45,30 @@ export default function App() {
       });
   }
 
+  function getTemplate() {
+    fetch('http://localhost:3001/template')
+      .then(response => {
+        return response.text();
+      })
+      .then(data => {
+        setTemplate(data);
+      });
+  }
+
   useEffect(() => {
     getCriteria();
+    getTemplate();
   }, []);
   return (
-    <div>
-      {criteria ? criteria : 'There is no criteria data available'}
-    </div>
+    <>
+      <div>
+        {criteria ? criteria : 'There is no criteria data available'}
+      </div>
+
+      <div>
+      {template ? template : 'There is no template data available'}
+      </div>
+    </>
   );
 }
 

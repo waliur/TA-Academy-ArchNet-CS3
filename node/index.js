@@ -4,6 +4,7 @@ const express = require("express");
 
 const app = express();
 const criteria_model = require('./criteriaModel')
+const template_model = require('./templateModel')
 
 // const bodyParser = require("body-parser");
 // const cors = require("cors");
@@ -35,8 +36,18 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.get('/', (req, res) => {
+app.get('/criteria', (req, res) => {
   criteria_model.getCriteria()
+  .then(response => {
+    res.status(200).send(response);
+  })
+  .catch(error => {
+    res.status(500).send(error);
+  })
+});
+
+app.get('/template', (req, res) => {
+  template_model.getTemplate()
   .then(response => {
     res.status(200).send(response);
   })
