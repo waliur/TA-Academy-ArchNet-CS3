@@ -34,6 +34,9 @@ import {useState, useEffect} from 'react';
 export default function App() {
   const [criteria, setCriteria] = useState(false);
   const [template, setTemplate] = useState(false);
+  const [category, setCategory] = useState(false);
+  const [assessment, setAssessment] = useState(false);
+  const [recommendation, setRecommendation] = useState(false);
 
   function getCriteria() {
     fetch('http://localhost:3001/criteria')
@@ -55,9 +58,42 @@ export default function App() {
       });
   }
 
+  function getCategory() {
+    fetch('http://localhost:3001/category')
+      .then(response => {
+        return response.text();
+      })
+      .then(data => {
+        setCategory(data);
+      });
+  }
+
+  function getAssessment() {
+    fetch('http://localhost:3001/assessment')
+      .then(response => {
+        return response.text();
+      })
+      .then(data => {
+        setAssessment(data);
+      });
+  }
+  
+  function getRecommendation() {
+    fetch('http://localhost:3001/recommendation')
+      .then(response => {
+        return response.text();
+      })
+      .then(data => {
+        setRecommendation(data);
+      });
+  }
+
   useEffect(() => {
     getCriteria();
     getTemplate();
+    getCategory();
+    getAssessment();
+    getRecommendation();
   }, []);
   return (
     <>
@@ -65,8 +101,28 @@ export default function App() {
         {criteria ? criteria : 'There is no criteria data available'}
       </div>
 
+      <br/>
+
       <div>
-      {template ? template : 'There is no template data available'}
+        {template ? template : 'There is no template data available'}
+      </div>
+
+      <br/>
+
+      <div>
+        {category ? category : 'There is no category data available'}
+      </div>
+
+      <br/>
+
+      <div>
+        {assessment ? assessment : 'There is no assessment data available'}
+      </div>
+      
+      <br/>
+
+      <div>
+        {recommendation ? recommendation : 'There is no recommendation data available'}
       </div>
     </>
   );

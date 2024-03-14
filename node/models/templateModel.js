@@ -1,6 +1,6 @@
 // const { pgClient } = require("./index");
 
-const { pgHost, pgDatabase, pgUser, pgPassword, pgPort } = require("./config");
+const { pgHost, pgDatabase, pgUser, pgPassword, pgPort } = require("../config");
 const { Pool } = require("pg");
 const pgClient = new Pool({
   user: pgUser,

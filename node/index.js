@@ -1,10 +1,14 @@
 // import
-const { port, pgHost, pgDatabase, pgUser, pgPassword, pgPort } = require("./config");
+//const { port, pgHost, pgDatabase, pgUser, pgPassword, pgPort } = require("./config");
+const { port } = require("./config");
 const express = require("express");
 
 const app = express();
-const criteria_model = require('./criteriaModel')
-const template_model = require('./templateModel')
+const criteria_model = require('./models/criteriaModel')
+const template_model = require('./models/templateModel')
+const category_model = require('./models/categoryModel')
+const assessment_model = require('./models/assessmentModel')
+const recommendation_model = require('./models/recommendationModel')
 
 // const bodyParser = require("body-parser");
 // const cors = require("cors");
@@ -48,6 +52,36 @@ app.get('/criteria', (req, res) => {
 
 app.get('/template', (req, res) => {
   template_model.getTemplate()
+  .then(response => {
+    res.status(200).send(response);
+  })
+  .catch(error => {
+    res.status(500).send(error);
+  })
+});
+
+app.get('/category', (req, res) => {
+  category_model.getCategory()
+  .then(response => {
+    res.status(200).send(response);
+  })
+  .catch(error => {
+    res.status(500).send(error);
+  })
+});
+
+app.get('/assessment', (req, res) => {
+  assessment_model.getAssessment()
+  .then(response => {
+    res.status(200).send(response);
+  })
+  .catch(error => {
+    res.status(500).send(error);
+  })
+});
+
+app.get('/recommendation', (req, res) => {
+  recommendation_model.getRecommendation()
   .then(response => {
     res.status(200).send(response);
   })

@@ -1,6 +1,6 @@
 // const { pgClient } = require("./index");
 
-const { pgHost, pgDatabase, pgUser, pgPassword, pgPort } = require("./config");
+const { pgHost, pgDatabase, pgUser, pgPassword, pgPort } = require("../config");
 const { Pool } = require("pg");
 const pgClient = new Pool({
   user: pgUser,
@@ -10,10 +10,10 @@ const pgClient = new Pool({
   port: pgPort
 });
 
-const getCriteria = async () => {
+const getCategory = async () => {
     try {
       return await new Promise(function (resolve, reject) {
-        pgClient.query("SELECT * FROM criteria", (error, results) => {
+        pgClient.query("SELECT * FROM category", (error, results) => {
           if (error) {
             reject(error);
           }
@@ -31,5 +31,5 @@ const getCriteria = async () => {
   };
 
   module.exports = {
-    getCriteria
+    getCategory
   };
