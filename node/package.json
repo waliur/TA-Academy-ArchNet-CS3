@@ -1,14 +1,21 @@
 {
-    "name": "docker_web_app",
-    "version": "1.0.0",
-    "description": "Node.js on Docker",
-    "author": "Waliur Rahman <waliur.rahman@6point6.co.uk>",
-    "main": "server.js",
-    "scripts": {
-        "start": "node server.js"
-    },
-    "dependencies": {
-        "express": "^4.16.1",
-        "nodemon": "^2.0.22"
-    }
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "cs dev team",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "2.8.5",
+    "dotenv": "^16.4.4",
+    "express": "^4.18.2",
+    "knex": "^3.1.0",
+    "knex-migrate-sql-file": "^2.0.0",
+    "nodemon": "^3.0.2",
+    "pg": "8.11.3"
+  }
 }

@@ -13,8 +13,7 @@ export default function TemplateDashboard() {
                 <h1>Template Dashboard</h1>
                 <button className="btn-1">+ New Template</button>
                 <Table />
-                <ul>
-                </ul>
+                <div style={{paddingBottom: '20rem'}}/>
             </main>
             <Footer changeCompany="false" /> 
         </div>
