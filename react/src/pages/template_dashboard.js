@@ -62,3 +62,22 @@ export default function TemplateDashboard() {
   );
 }
 
+// <<<<<<< jk-frontend
+// =======
+//     return (
+//         <>
+//         <div id="tp-dashboard">
+//             <Header showClient = "true" clientName="Client Name Ltd" serviceName="Amazing Service"/>
+//             <main>
+//                 <h1>Template Dashboard</h1>
+//                 <button className="btn-1">+ New Template</button>
+//                 <Table />
+//                 <div style={{paddingBottom: '20rem'}}/>
+//             </main>
+//             <Footer changeCompany="false" /> 
+//         </div>
+//         </>
+//     )
+
+// }
+// >>>>>>> master
